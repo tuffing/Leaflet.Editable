@@ -1637,7 +1637,9 @@
         },
 
         onDrawingMouseUp: function (e) {
-            this.commitDrawing(e);
+            //committing here breaks the map for inserting / drawing squares and makes
+            //it difficult to clear the map, accept commits of rectangles.
+            //this.commitDrawing(e);
             e.originalEvent._simulated = false;
             L.Editable.PathEditor.prototype.onDrawingMouseUp.call(this, e);
         },
